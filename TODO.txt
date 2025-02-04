@@ -1,0 +1,4 @@
+1. Learn MySQL
+2. Create localized webpage with login page
+
+
