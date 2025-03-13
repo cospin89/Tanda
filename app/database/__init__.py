@@ -8,6 +8,7 @@ def init_db(app):
 
     # Import models to register them with SQLAlchemy
     from .models.User import User
+    from .models.Tanda import Tanda, TandaMember
 
     with app.app_context():
         db.create_all()

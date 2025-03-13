@@ -1,6 +1,6 @@
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
-from sqlalchemy import Column, Integer, String, Boolean, DateTime
+from sqlalchemy import Column, Integer, String, Boolean, DateTime, Numeric
 from app.database import db
 
 class User(db.Model):
@@ -10,6 +10,7 @@ class User(db.Model):
     email = Column(String(120), unique=True, nullable=False)
     username = Column(String(100), unique=True, nullable=True)
     password_hash = Column(String(256), nullable=False)
+    balance = Column(Numeric(10, 2), default=0)
     is_active = Column(Boolean, default=True)
     created_at = Column(DateTime, default=datetime.utcnow)
 
